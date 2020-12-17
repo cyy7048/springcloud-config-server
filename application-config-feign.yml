@@ -28,4 +28,4 @@ hystrix:
             maxConcurrentRequests: 20 #当信号量隔离时  默认最大请求数 20
           #  timeoutInMilliseconds: 4000 #断路器超时时间，默认1000ms
 member:
-  username: aaafffffffffffffffffffdf
+  username: aaafffffffffffffffffffdfffdfdfdfdg
