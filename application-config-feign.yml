@@ -1,8 +1,8 @@
 server:
-  port: 9900
+  port: 10001
 spring:
   application:
-    name: cloud-config-server
+    name: cloud-member-feign
 eureka:
   client:
     service-url:
@@ -16,5 +16,16 @@ management:
   endpoint:
     health:
       show-details: always
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          thread:
+            maxConcurrentRequests: 20 #当信号量隔离时  默认最大请求数 20
+          #  timeoutInMilliseconds: 4000 #断路器超时时间，默认1000ms
 member:
   username: ccc
